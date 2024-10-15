@@ -4,12 +4,14 @@ import Loading from './Loading';
 import Navbar from './Navbar';
 import { UserContext } from '../context/UserContext';
 import { useContext } from 'react'; 
+import { useNavigate } from 'react-router-dom';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
   const { user } = useContext(UserContext);
+  const navigate=useNavigate()
 
   const handleCreatePost = async (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ const CreatePost = () => {
     setLoading(false);
     //console.log('added successfully')
     //toast.success('Post created successfully!');
-    window.location.href = '/'; // Redirect to MyPosts
+    navigate('/');
   };
 
   if (loading) return <Loading />; // Show loading while post is being created
