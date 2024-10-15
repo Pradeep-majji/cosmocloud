@@ -55,7 +55,6 @@ const OwnPostCard = ({ post }) => {
       <div className="card-body">
         <h2 className="card-title">{post.PROJECT_NAME}</h2> {/* Display project name */}
         <p className="card-text">{post.ABSTRACT}</p> {/* Display abstract */}
-        <p className="card-text">Post ID: {post._id}</p> {/* Display post ID for reference */}
 
         <button className="btn btn-warning" onClick={handleShowModal}>
           Update

@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <ul className="navbar-nav">
-      <Link to="/" className="navbar-brand">Cosmo Cloud Articles</Link>
+      <Link to="/" className="navbar-brand">Explore Tech Yourself</Link>
         {user ? (
           <>
             <li 

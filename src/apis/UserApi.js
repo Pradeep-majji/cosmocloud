@@ -22,6 +22,19 @@ const UserApi = {
     }
   },
 
+  getUserById: async (id) => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/users/${id}`,
+        { headers: HEADERS }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('details by id  API Error:', error);
+      return null;
+    }
+  },
+
   // Register User
   register: async (fullName, email, phoneNumber, password) => {
     try {
