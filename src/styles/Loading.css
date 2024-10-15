@@ -1,0 +1,22 @@
+.loading-spinner {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height of the viewport */
+  padding: 0; /* Remove extra padding */
+  background-color: rgba(255, 255, 255, 0.9); /* Optional: Background for contrast */
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey border */
+  border-radius: 50%; /* Circular shape */
+  border-top: 8px solid #3498db; /* Blue top border */
+  width: 60px; /* Spinner size */
+  height: 60px; /* Spinner size */
+  animation: spin 2s linear infinite; /* Spinner animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

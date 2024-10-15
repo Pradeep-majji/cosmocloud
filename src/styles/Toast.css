@@ -1,0 +1,22 @@
+/* src/styles/Toast.css */
+
+.Toastify__toast {
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Toastify__toast--error {
+    background: #dc3545; /* Red for error */
+    color: black;
+  }
+  
+  .Toastify__toast--success {
+    background: #28a745; /* Green for success */
+    color: black;
+  }
+  
+  .Toastify__toast--info {
+    background: #17a2b8; /* Blue for info */
+    color: black;
+  }
+  

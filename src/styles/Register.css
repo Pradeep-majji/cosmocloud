@@ -1,0 +1,22 @@
+/* src/styles/Register.css */
+
+.register-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-container h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .register-container .btn {
+    background-color: #28a745; /* Green for registration */
+  }
+  
+  .register-container .btn:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  

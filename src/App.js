@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Login from './components/Login';
+import Register from './components/Register';
+import MyPosts from './components/MyPosts';
+import CreatePost from './components/CreatePost';
+import Profile from './components/Profile';
+import PageNotFound from './components/PageNotFound';
+import UserContextProvider from './context/UserContext'; // Context provider
+import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
+import './styles/App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './styles/Toast.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContextProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route 
+            path="/myposts" 
+            element={
+              <ProtectedRoute>
+                <MyPosts />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/createpost" 
+            element={
+              <ProtectedRoute>
+                <CreatePost />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/myprofile" 
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            } 
+          />
+
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+        <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} closeOnClick draggable pauseOnHover />
+      </Router>
+    </UserContextProvider>
   );
-}
+};
 
 export default App;

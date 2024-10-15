@@ -1,0 +1,156 @@
+END POINTS FOR THE WEBSITE
+
+USERS (REGISTER, LOGIN, UPDATE)
+
+Register User: POST
+	
+	https://free-ap-south-1.cosmocloud.io/development/api/users
+	Requried Fields:
+	{
+    		"FULL_NAME":"M VINAY",
+    		"EMAIL":"mlaxmany@gmail.com",
+    		"PHONE_NUMBER":"9087654321",
+    		"PASSWORD":"Vinay@8074"
+	}
+	Headers:
+	environmentId:67053fe3f46082408f008ecf
+	projectId:67053fe3f46082408f008ece
+
+	Expected Output:
+	{
+		"_id":"908765432121222"
+	}
+	"Record Already Exists"
+
+Login User: POST
+
+	https://free-ap-south-1.cosmocloud.io/development/api/verify_user
+	Requried Fields:
+	{
+    		"EMAIL":"mlaxmany@gmail.com",
+    		"PASSWORD":"Vinay@8074"
+	}
+	Headers:
+	environmentId:67053fe3f46082408f008ecf
+	projectId:67053fe3f46082408f008ece
+	
+	Expected Output:
+	{
+    		"_id": "670684de9d190c996c22210a",
+    		"FULL_NAME": "M LAKSHMAN VINAY",
+   		 "EMAIL": "mlaxmany@gmail.com",
+    		"PHONE_NUMBER": "9087654321",
+    		"PASSWORD": "Vinay@8074"
+	}
+	null
+
+Update User: PATCH
+
+	https://free-ap-south-1.cosmocloud.io/development/api/users/670684de9d190c996c22210a
+	Requried Fields:
+	{
+    		"FULL_NAME":"M VINAY",
+    		"EMAIL":"mlaxmany@gmail.com",
+    		"PHONE_NUMBER":"9087654321",
+    		"PASSWORD":"Vinay@8074"
+	}
+	Headers:
+	environmentId:67053fe3f46082408f008ecf
+	projectId:67053fe3f46082408f008ece
+
+	Expected Output:
+	{
+    		"message": "Record updated."
+	}
+
+
+POSTS (ADD, DELETE, UPDATE)
+
+
+Add Post: POST
+	
+	https://free-ap-south-1.cosmocloud.io/development/api/posts
+	Requried Fields:
+	{
+    		"STUDENT_ID":"670684de9d190c996c22210a",
+    		"PROJECT_NAME":"CREDICT SCORE PREDICTION",
+    		"LIKE_COUNT":0,
+    		"ABSTRACT":"CREDICT SCORE PREDICTION USING ML"
+	}
+	Headers:
+	environmentId:67053fe3f46082408f008ecf
+	projectId:67053fe3f46082408f008ece
+
+	Expected Output:
+	{
+		"id":"67069406094ec65cd51982b0"
+	}
+
+Delete Post: DELETE
+
+	https://free-ap-south-1.cosmocloud.io/development/api/posts/67069406094ec65cd51982b0
+	Requried Fields:
+	{}
+	Headers:
+	environmentId:67053fe3f46082408f008ecf
+	projectId:67053fe3f46082408f008ece
+
+	Expected Output:
+	{
+    		"message": "Record deleted."
+	}
+
+Update Post: PATCH
+
+	https://free-ap-south-1.cosmocloud.io/development/api/posts/6706a321094ec65cd52ba1fa
+	Requried Fields:
+	{
+    		"STUDENT_ID":"670684de9d190c996c22210a",
+    		"PROJECT_NAME":"CREDICT SCORE PREDICTION",
+    		"LIKE_COUNT":0,
+    		"ABSTRACT":"CREDICT SCORE PREDICTION USING ML"
+	}
+	Headers:
+	environmentId:67053fe3f46082408f008ecf
+	projectId:67053fe3f46082408f008ece
+
+	Expected Output:
+	{
+    		"message": "Record updated."
+	}
+
+GET POSTS By ID: GET
+
+	https://free-ap-south-1.cosmocloud.io/development/api/posts/{id}
+	Headers:
+	environmentId:67053fe3f46082408f008ecf
+	projectId:67053fe3f46082408f008ece
+
+GET POSTS: GET
+
+	https://free-ap-south-1.cosmocloud.io/development/api/posts?limit=100&offset=0
+	Headers:
+	environmentId:67053fe3f46082408f008ecf
+	projectId:67053fe3f46082408f008ece
+	
+	Expected Output:
+{
+    "data": [
+        {
+            "_id": "6706a321094ec65cd52ba1fa",
+            "STUDENT_ID": "670684de9d190c996c22210a",
+            "PROJECT_NAME": "CREDICT SCORE PREDICTION",
+            "LIKE_COUNT": 0,
+            "ABSTRACT": "CREDICT SCORE PREDICTION USING MACHINE LEARNING"
+        }
+    ],
+    "page": {
+        "total": 1,
+        "nextOffset": 100.0,
+        "previousOffset": -100,
+        "limit": 100
+    }
+}
+
+
+	

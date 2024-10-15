@@ -1,0 +1,45 @@
+/* src/styles/PostCard.css */
+
+.card {
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #ddd; /* Light border for the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transition for hover effect */
+    overflow: hidden; /* Ensure no overflow */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  .card-body {
+    padding: 20px; /* Padding inside the card */
+  }
+  
+  .card-title {
+    font-size: 1.5rem; /* Title font size */
+    margin-bottom: 10px; /* Space below the title */
+    color: #007bff; /* Blue color for title */
+  }
+  
+  .card-subtitle {
+    font-size: 1rem; /* Subtitle font size */
+    color: #6c757d; /* Muted color for subtitle */
+    margin-bottom: 10px; /* Space below the subtitle */
+  }
+  
+  .card-text {
+    font-size: 0.9rem; /* Body text font size */
+    color: #333; /* Dark color for text */
+    margin-bottom: 10px; /* Space below text */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .card {
+      margin: 10px; /* Margin around cards on small screens */
+    }
+  }
+  
